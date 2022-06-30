@@ -4,7 +4,9 @@ const ContactList = ({ contacts }) => (
   <ul>
     {contacts.map(contact => (
       <li key={nanoid()}>
-        <p>{contact.name}</p>
+        <p>
+          {contact.name}: <span>{contact.number}</span>
+        </p>
       </li>
     ))}
   </ul>

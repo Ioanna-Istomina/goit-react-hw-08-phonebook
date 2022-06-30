@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import ContactForm from './ContactForm/ContactForm';
 import ContactList from './ContactList/ContactList';
 
@@ -7,8 +7,11 @@ export class App extends Component {
     contacts: [],
   };
 
-  formSubmitHandler = data => {
-    console.log(data);
+  formSubmitHandler = contact => {
+    const app = this.setState(({ contacts }) => ({
+      contacts: [...contacts, contact],
+    }));
+    console.log(app);
   };
 
   render() {
