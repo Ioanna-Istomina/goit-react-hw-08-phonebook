@@ -1,0 +1,20 @@
+.form {
+  margin-left: 40px;
+  width: 200px;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  margin-top: 10px;
+  width: 200px;
+  height: 20px;
+  border-width: thin;
+}
+
+.input:hover {
+  border-color: green;
+}

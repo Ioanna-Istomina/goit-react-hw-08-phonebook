@@ -1,0 +1,40 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-left: 40px;
+  width: 200px;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.input {
+  margin-top: 10px;
+  width: 200px;
+  height: 20px;
+  border-width: thin;
+}
+
+.input:hover {
+  border-color: green;
+}
+
+.button {
+  width: 200px;
+  height: 30px;
+  border: none;
+  border-radius: 20px;
+  margin-top: 10px;
+  box-shadow: 4px 4px 8px 0px rgba(74, 81, 86, 0.2);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button:hover {
+  background-color: rgb(78, 167, 78);
+  color: white;
+}
