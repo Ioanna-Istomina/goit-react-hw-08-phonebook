@@ -1,15 +1,10 @@
-import { createSelector } from '@reduxjs/toolkit';
-
-export const contactSelector = state => state.contact;
+export const contactSelector = state => state.contacts;
 export const filterSelector = state => state.filter;
 
-export const filterContacts = createSelector(
-  contactSelector,
-  filterSelector,
-  (contacts, filter) => {
-    const normalizeFilter = filter.toLowerCase();
-    contacts.filter(contact =>
-      contact.name.toLowerCase().includes(normalizeFilter)
-    );
-  }
-);
+export const filterContacts = (state, contacts) => {
+  const filter = filterSelector(state);
+  const normalizeFilter = filter?.toLowerCase();
+  return contacts?.filter(contact =>
+    contact?.name?.toLowerCase().includes(normalizeFilter)
+  );
+};
