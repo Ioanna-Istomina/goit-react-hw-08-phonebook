@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { setupListeners } from '@reduxjs/toolkit/query';
-import { contactsApi } from './contactsAPI';
-import { filter } from './reducer';
+import { contactsApi } from './API';
+import { filter } from './contacts/reducer';
 
 export const store = configureStore({
   reducer: {
@@ -13,5 +13,4 @@ export const store = configureStore({
 
   devTools: process.env.NODE_ENV !== 'production',
 });
-
 setupListeners(store.dispatch);

@@ -3,23 +3,13 @@ import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
 import s from './ContactList.module.css';
 import { useSelector } from 'react-redux';
-import { filterContacts } from '../../redux/selectors';
-// import { deleteContact } from 'redux/actions';
-import {
-  useDeleteContactMutation,
-  useGetContactsQuery,
-} from '../../redux/contactsAPI';
+import { filterContacts } from '../../redux/contacts/selectors';
+import { useDeleteContactMutation, useGetContactsQuery } from '../../redux/API';
 
 const ContactList = () => {
   const { data: allContacts } = useGetContactsQuery();
   const contacts = useSelector(state => filterContacts(state, allContacts));
   const [deleteContact] = useDeleteContactMutation();
-  // const dispatch = useDispatch();
-
-  // const handleDelete = ev => {
-  //   const id = ev.currentTarget.id;
-  //   dispatch(deleteContact(id));
-  // };
 
   return (
     <>

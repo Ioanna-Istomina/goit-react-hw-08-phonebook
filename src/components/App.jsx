@@ -1,29 +1,19 @@
-import ContactForm from './ContactForm';
-import ContactList from './ContactList';
-import Filter from './Filter';
-import { useGetContactsQuery } from '../redux/contactsAPI';
-import { useAddContactsMutation } from '../redux/contactsAPI';
+import { Routes, Route } from 'react-router-dom';
+import LoginPage from 'pages/LoginPage';
+import RegistrationPage from 'pages/RegistrationPage';
+import PhonebookPage from '../pages/PhonebookPage';
+import Header from './Header';
 
 export const App = () => {
-  const { data } = useGetContactsQuery();
-  const [createContact] = useAddContactsMutation();
-
-  const formSubmit = contact => {
-    if (data.some(({ name }) => name === contact.name)) {
-      alert(`${contact.name} is already in contacts`);
-      return;
-    }
-    createContact(contact);
-  };
-
   return (
     <div>
-      <h1 style={{ marginLeft: '40px' }}>Phonebook</h1>
-      <ContactForm onSubmit={formSubmit} />
-
-      <h2 style={{ marginLeft: '40px' }}>Contacts</h2>
-      <Filter />
-      {data && <ContactList />}
+      <Header />
+      <Routes className="container">
+        <Route path="/registration" element={<RegistrationPage />} />
+        <Route path="/authorization" element={<LoginPage />} />
+        <Route path="/contacts" element={<PhonebookPage />} />
+        <Route path="*" element={<RegistrationPage />} />
+      </Routes>
     </div>
   );
 };
