@@ -1,12 +1,13 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import localStorage from 'redux-persist/es/storage';
+// import localStorage from 'redux-persist/es/storage';
 
 export const contactsApi = createApi({
   reducerPath: 'contactsApi',
   baseQuery: fetchBaseQuery({
     baseUrl: 'https://connections-api.herokuapp.com/',
-    prepareHeaders: async headers => {
-      const res = await localStorage.getItem('user');
+
+    prepareHeaders: headers => {
+      const res = localStorage.getItem('user');
 
       if (!res) {
         return headers;
@@ -50,7 +51,6 @@ export const contactsApi = createApi({
       }),
       invalidatesTags: ['Users'],
       transformResponse: result => {
-        console.log(result);
         localStorage.setItem('user', JSON.stringify(result));
       },
     }),
