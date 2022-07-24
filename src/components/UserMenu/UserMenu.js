@@ -25,8 +25,7 @@ const UserMenu = () => {
     <div>
       <span style={{ marginRight: '20px' }}>{`Привіт, ${data?.name}!`}</span>
       <button
-        className="btn btn-primary "
-        style={{ marginRight: '20px' }}
+        className="btn btn-primary  me-5"
         type="button"
         onClick={logOutUser}
       >

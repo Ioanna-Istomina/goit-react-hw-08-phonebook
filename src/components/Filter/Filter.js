@@ -1,4 +1,3 @@
-import s from './Filter.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { filterSelector } from 'redux/contacts/selectors';
 import { filterContact } from '../../redux/contacts/actions';
@@ -14,7 +13,7 @@ const Filter = () => {
   };
 
   return (
-    <form className={s.form}>
+    <form className="ms-5">
       <label className="form-label">
         Find contacts by name
         <input

@@ -12,7 +12,7 @@ const Header = () => {
     <header className="navbar navbar-expand-xl bg-light justify-content-end">
       {!data ? (
         <nav>
-          <ul className=" nav nav-pills" style={{ paddingRight: '20px' }}>
+          <ul className=" nav nav-pills me-5" style={{ paddingRight: '20px' }}>
             <NavLink to="/authorization" className={activeLink}>
               <li className="nav-item">LogIn</li>
             </NavLink>

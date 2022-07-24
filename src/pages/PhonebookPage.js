@@ -4,8 +4,8 @@ import Filter from '../components/Filter';
 import { useGetContactsQuery, useAddContactsMutation } from '../redux/API';
 
 const PhonebookPage = () => {
-    const { data } = useGetContactsQuery();
-    
+  const { data } = useGetContactsQuery();
+
   const [createContact] = useAddContactsMutation();
 
   const formSubmit = contact => {
@@ -17,7 +17,7 @@ const PhonebookPage = () => {
   };
   return (
     <div>
-      <h1>Phonebook</h1>
+      <h1 style={{ marginLeft: '40px' }}>Phonebook</h1>
       <ContactForm onSubmit={formSubmit} />
 
       <h2 style={{ marginLeft: '40px' }}>Contacts</h2>
