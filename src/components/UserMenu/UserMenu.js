@@ -1,10 +1,10 @@
-import { useGetUserQuery, useLogOutUserMutation } from '../../redux/API';
+import { useLogOutUserMutation } from '../../redux/API';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { contactsApi } from '../../redux/API';
 
-const UserMenu = () => {
-  const { data } = useGetUserQuery();
+const UserMenu = ({ data }) => {
+  // const { data } = useGetUserQuery();
   const [logOut] = useLogOutUserMutation();
   const navigate = useNavigate();
   const dispatch = useDispatch();

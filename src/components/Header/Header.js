@@ -22,7 +22,7 @@ const Header = () => {
           </ul>
         </nav>
       ) : (
-        <UserMenu />
+        <UserMenu data={data} />
       )}
     </header>
   );
