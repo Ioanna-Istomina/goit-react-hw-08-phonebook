@@ -5,10 +5,9 @@ import { filterContact } from '../../redux/contacts/actions';
 const Filter = () => {
   const dispatch = useDispatch();
   const filter = useSelector(state => filterSelector(state));
-
+  //changeFilter
   const changeFilter = ev => {
     const inputValue = ev.currentTarget.value;
-
     dispatch(filterContact(inputValue));
   };
 
