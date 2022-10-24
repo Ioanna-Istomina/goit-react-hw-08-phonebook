@@ -1,5 +1,4 @@
-Phonebook is a personal web application with contacts list. It allows to save phone contacts to personal database, edit and delete contacts from it. User registration/authorization and database is implemented with Swagger. Phonebook is adapted to 3 types of screen: mobile, tablet and desktop.
-
+Phonebook is a personal web application with contacts list. It allows to save phone contacts to personal database, edit and delete contacts from it. 
 <h1>Used technologies</h1>
 
 ### Languages and Frameworks:
